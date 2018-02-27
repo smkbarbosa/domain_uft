@@ -37,7 +37,7 @@ do
             sudo ntpdate samba-ad.dominio.uft.edu.br
             echo "Criando arquivo realmd"
             sudo touch /etc/realmd.conf
-            sudo sh -c 'echo "[users]\ndefault-home = /home/%D/%U\ndefault-shell = /bin/bash\n[active-directory]\ndefault-client = sssd\nos-name = Ubuntu Desktop Linux\nos-version = 16.04\n[service]\nautomatic-install = no\n[dominio.uft.edu.br]\nfully-qualified-names = no\nautomatic-id-mapping = yes\nuser-principal = yes\nmanage-system = no"' > /etc/realmd.conf
+            sudo sh -c "echo '[users]\ndefault-home = /home/%D/%U\ndefault-shell = /bin/bash\n[active-directory]\ndefault-client = sssd\nos-name = Ubuntu Desktop Linux\nos-version = 16.04\n[service]\nautomatic-install = no\n[dominio.uft.edu.br]\nfully-qualified-names = no\nautomatic-id-mapping = yes\nuser-principal = yes\nmanage-system = no' > /etc/realmd.conf"
             echo "Ativando ticket do Kerberos:"
             sudo kinit administrator@DOMINIO.UFT.EDU.BR
             echo "Adicionando computador no dominio"
